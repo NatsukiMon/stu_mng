@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>学生成绩管理-Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<script>
+</script>
+
+<h2 style="text-align: center">学籍变更信息表</h2>
+<div class="row">
+<div class="table-responsive padding-sm col-md-10 col-md-offset-1">
+  <table class="table table-striped table-bordered table-hover">
+    <div class="btn-group btn-group-justified">
+      <a href="http://127.0.0.1:8000/studentinfo" class="btn btn-info">返回</a>
+    </div>
+    <thead>
+      <tr>
+        <th>记录编号</th>
+        <th>学生学号</th>
+        <th>变更情况</th>
+        <th>记录时间</th>
+        <th>详情描述</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for change in change_list %}
+<tr>
+<td>{{ change.id }}</td>
+<td>{{ change.student_no }}</td>
+<td>{{ change.change_note }}</td>
+<td>{{ change.change_time }}</td>
+<td>{{ change.change_mage }}</td>
+</tr>
+{% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+
+</html>

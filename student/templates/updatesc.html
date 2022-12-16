@@ -1,0 +1,35 @@
+<html> 
+<head> 
+    <title>修改成绩-Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<form method="post">
+{%csrf_token%}
+<h2 style="text-align: center">修改学生成绩</h2>
+<div class="row">
+<div class="table-responsive padding-sm col-md-10 col-md-offset-1">
+    <table class="table table-striped table-bordered table-hover">
+        <div class="btn-group btn-group-justified">
+            <a href="http://127.0.0.1:8000/scinfo/?sc_no={{update_student.student_no}}" class="btn btn-info">返回</a>
+        </div>
+        <thread>
+            <tr> 
+            <th>学号</th><td>{{ update_student.student_no }}</td></tr>
+            <th>课程号</th><td>{{ update_student.course_no }}</td></tr>
+            <th>成绩</th><td><input name="grade" type="text" min="0" max="100" value="{{ update_student.grade }}"></td></tr>
+            <th>操作</th><td><input type="submit" value="保存" class="btn btn-success"> 
+                    <input type="reset" value="重填" class="btn btn-success"></td></tr>
+        </thead>
+    </table>
+</div>
+</div>
+</form>
+</html>

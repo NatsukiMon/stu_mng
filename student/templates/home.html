@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>学生学籍管理系统-首页</title>
+   <style type="text/css">
+   	#title{
+		   font-family:"新宋体";
+			position: absolute;
+			color: #ffffff;
+			font-size: 60px;
+			text-align-last: center;
+			left: 40%;
+			top: 10%;
+		}  
+		#content{
+			position: absolute;
+			top: 20%;/*顶部到元素*/
+			left:30%;
+			width: 40%;
+			height:400px;
+			margin-top:-200;/*边缘到底部*/		
+			text-align-last: center;
+		}       
+      button{
+         border: 0px;
+         font-size: 20px;
+         line-height: 20px;
+         background-color: transparent
+      }
+      body {
+	      background-image: url(/static/1.jpg);
+	      background-repeat: no-repeat;
+	      background-position: center;
+         background-size: 100% 100%;
+         background-attachment: fixed;
+      }
+      #denglu{
+			background-color: #fbb957;
+			border-radius:10px;
+         border:0;/*边框宽度0*/
+         height:40px;
+         width:90px;
+         padding:5px 10px;/*上下填充10 左右5*/
+         font-size: 25px;
+         font-family: "潮字社国风鸿书简-闪";
+         font-weight:400	
+		}
+		#zhuce{
+		   background-color: #fbb957;
+		   border-radius:10px;
+         border:0;/*边框宽度0*/
+         height:40px;
+         width:90px;
+         padding:5px 10px;/*上下填充10 左右5*/
+         font-size: 25px;
+         font-family: "潮字社国风鸿书简-闪";
+         font-weight:400	
+		}
+      #content h1{
+			color: white;
+			font-size: 50px;	
+         font-family: "潮字社国风鸿书简-闪";
+         font-weight:400	
+		}
+   </style>
+</head>
+<body>
+   <div id="content">
+   <h1> 欢迎使用学生管理系统</h1><br />
+   <a href="login" target="_blank"><input type="button" name="denglu" id="denglu" value="登录" /></a>
+   &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+   <a href="register" target="_blank"><input type="button" name="zhuce"id="zhuce"value="注册"/></a>
+   </div>
+</body>
+</html>
+
+
+
