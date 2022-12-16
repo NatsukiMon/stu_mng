@@ -15,12 +15,17 @@
 		}  
 		#content{
 			position: absolute;
-			top: 20%;/*顶部到元素*/
-			left:30%;
-			width: 40%;
-			height:400px;
+			top: 8%;/*顶部到元素*/
+			left:15%;
+			width: 70%;
+			height:190px;
+         background-color: #2C5C82;
 			margin-top:-200;/*边缘到底部*/		
 			text-align-last: center;
+         /*这里做一个半透明效果*/
+				filter:alpha(Opacity=60);
+				-moz-opacity:0.8;
+				opacity: 0.8;
 		}       
       button{
          border: 0px;
@@ -29,40 +34,70 @@
          background-color: transparent
       }
       body {
-	      background-image: url(/static/1.jpg);
+	      background-image: url(/static/5.jpg);
 	      background-repeat: no-repeat;
 	      background-position: center;
          background-size: 100% 100%;
          background-attachment: fixed;
       }
       #denglu{
-			background-color: #fbb957;
+			background-color: #8abcd1;
+         position: absolute;
+         top: 60%;/*顶部到元素*/
+			left:35%;
 			border-radius:10px;
-         border:0;/*边框宽度0*/
+         border:10px;
          height:40px;
          width:90px;
          padding:5px 10px;/*上下填充10 左右5*/
+         color: white;
          font-size: 25px;
-         font-family: "潮字社国风鸿书简-闪";
+         font-family: "华文隶书";
          font-weight:400	
 		}
 		#zhuce{
-		   background-color: #fbb957;
+		   background-color: #8abcd1;
+         position: absolute;
+         top: 60%;/*顶部到元素*/
+			right:35%;
 		   border-radius:10px;
-         border:0;/*边框宽度0*/
+         border:10px;
          height:40px;
          width:90px;
          padding:5px 10px;/*上下填充10 左右5*/
+         color: white;
          font-size: 25px;
-         font-family: "潮字社国风鸿书简-闪";
-         font-weight:400	
+         font-family: "华文隶书";
+         font-weight:400
 		}
       #content h1{
-			color: white;
+         position: absolute;
+         top: -3%;
+         left: 20%;
+         width: 60%;
+			color: #ffffff;
 			font-size: 50px;	
-         font-family: "潮字社国风鸿书简-闪";
+         font-family: "龙书陈忠建文青简繁-闪";
          font-weight:400	
 		}
+      #footer {
+         height: 30px;
+         line-height: 40px;
+         position: fixed;
+         bottom: 0;
+         width: 100%;
+         text-align: center;
+         background: #14243F;
+         color: #fff;
+         font-family: Arial;
+         font-size: 12px;
+         letter-spacing: 1px;
+      }
+      .content {
+         height: 1800px;
+         width: 100%;
+         text-align: center;
+      }
    </style>
 </head>
 <body>
@@ -72,6 +107,7 @@
    &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
    <a href="register" target="_blank"><input type="button" name="zhuce"id="zhuce"value="注册"/></a>
    </div>
+   <div id="footer">Copyright © 2022 YIJIU All Rights Reserved.</div>
 </body>
 </html>
 

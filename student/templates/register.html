@@ -13,13 +13,14 @@
                 background-attachment: fixed;
             }
 			#title{
-				font-family:"新宋体";
-				position: absolute;
+				font-family:"龙书陈忠建文青简繁-闪";
 				color: #ffffff;
-				font-size: 60px;
+				font-size: 50px;
 			    text-align-last: center;
-			    left: 40%;
-			    top: 10%;
+			   	position: absolute;
+				top: 10%;/*顶部到元素*/
+				left:40%;
+				width: 20%
 			}
 			#content{
 				position: absolute;
@@ -27,8 +28,8 @@
 				left:30%;
 				width: 40%;
 				height:400px;
-				margin: auto;/*边缘到底部*/		
-				background-color: #34495e;
+				margin: auto;	
+				background-color: #254656;
 				text-align-last: center;
 				/*这里做一个半透明效果*/
 				filter:alpha(Opacity=60);
@@ -36,44 +37,67 @@
 				opacity: 0.8;
 			}
 			#userid{
+				position: absolute;
+         		top: 35%;
+         		left: 20%;
+         		width: 60%;
 				color: #3498db;
-				font-size: 120%;
 				text-align: center;
 				border-radius: 25px;/*边框圆角*/
+				font-size: 25px;
+				font-family: "华文隶书"
 			}
 			#password{
+				position: absolute;
+         		top: 47%;
+         		left: 20%;
+         		width: 60%;
 				color: #3498db;
-				font-size: 120%;
 				text-align: center;
 				border-radius: 25px;
-                
-			}
-			#denglu{
-				background-color: pink;
-				border-radius:10px;
-             	border:0;/*边框宽度0*/
-            	height:40px;
-             	width:90px;
-            	padding:5px 10px;/*上下填充10 左右5*/
-            	font-size: 20px;
+				font-size: 25px;
+				font-family: "华文隶书"
 			}
 			#zhuce{
-				background-color: pink;
+				position: absolute;
+         		top: 65%;
+         		right: 20%;
+         		width: 60%;
+				color:white;
+				background-color: #F68D9D;
 				border-radius:10px;
              	border:0;/*边框宽度0*/
             	height:40px;
-             	width:90px;
             	padding:5px 10px;/*上下填充10 左右5*/
-            	font-size: 20px;
+            	font-size: 25px;
+				font-family: "华文隶书";
 			}
 			#content h1{
 				color: white;
 				font-size: 50px;			
 			}
+			#footer {
+				height: 30px;
+				line-height: 40px;
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+				text-align: center;
+				background: #213342;
+				color: #fff;
+				font-family: Arial;
+				font-size: 12px;
+				letter-spacing: 1px;
+			}
+			.content {
+				height: 1800px;
+				width: 100%;
+				text-align: center;
+			}
          </style>
     </head>
 <body >
-<div id="title">管理员登陆</div>
+<div id="title">管理员注册</div>
 <div id="content">
     <h1 >Welcome</h1><br />
             <form action="#" method="post">{% csrf_token %}
@@ -82,6 +106,7 @@
                 <p><input type="submit" name="zhuce"id="zhuce"value="注册"/></p>
             </form>
 </div>
+<div id="footer">Copyright © 2022 YIJIU All Rights Reserved.</div>
 </body>
 </html>
 

@@ -10,10 +10,52 @@
      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
+    <style type="text/css">
+      body{
+	      background-image: url(/static/2.jpg);
+	      background-repeat: no-repeat;
+	      background-position: center;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        
+      }
+      #content{
+				text-align-last: center;
+				/*这里做一个半透明效果*/
+				filter:alpha(Opacity=60);
+				-moz-opacity:0.8;
+				opacity: 0.8;
+			}
+      h2{
+        color:#ffffff;
+        text-align: center;
+				font-family:"龙书陈忠建文青简繁-闪";
+        font-size: 40px;		
+			}
+      #footer {
+				height: 30px;
+				line-height: 40px;
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+				text-align: center;
+				background: #213342;
+				color: #fff;
+				font-family: Arial;
+				font-size: 12px;
+				letter-spacing: 1px;
+			}
+			.content {
+				height: 1800px;
+				width: 100%;
+				text-align: center;
+			}
+    </style>
 </head>
+<body >
 <form method="post">{%csrf_token%}
 <h2 style="text-align: center">修改学生信息</h2>
+<div id="content">
 <div class="row">
 <div class="table-responsive padding-sm col-md-10 col-md-offset-1">
 <table  class="table table-striped table-bordered table-hover">
@@ -22,17 +64,20 @@
       <a href="http://127.0.0.1:8000/insert" class="btn btn-primary">添加学生</a>
     </div>
     <thread>
-    <tr><th>姓名</th><td><input name="student_name" type="text" value="{{ update_student.student_name }}"></td></tr>
-    <th>出生年月</th><td><input name="birth" type="date" value="{{ update_student.birth }}"></td></tr>
-    <th>籍贯</th><td><input name="native_p" type="text" min="0" max="100" value="{{ update_student.native_p }}" ></td></tr>
-    <th>班号</th><td><input name="class_no" type="text" value="{{ update_student.class_no}}" id="inputs" maxlength="4"></td></tr>
-    <th>院系</th><td><input name="dept_no" type="text" value="{{ update_student.dept_no }}"></td></tr>
-    <th>备注</th><td><input name="change_mage" type="text"></td></tr>
-    <th>操作</th><td><input type="submit" value="保存" class="btn btn-success"> 
+    <tr class="active"><th>姓名</th><td><input name="student_name" type="text" value="{{ update_student.student_name }}"></td></tr>
+    <tr class="active"><th>出生年月</th><td><input name="birth" type="date" value="{{ update_student.birth }}"></td></tr>
+    <tr class="active"><th>籍贯</th><td><input name="native_p" type="text" min="0" max="100" value="{{ update_student.native_p }}" ></td></tr>
+    <tr class="active"><th>班号</th><td><input name="class_no" type="text" value="{{ update_student.class_no}}" id="inputs" maxlength="4"></td></tr>
+    <tr class="active"><th>院系</th><td><input name="dept_no" type="text" value="{{ update_student.dept_no }}"></td></tr>
+    <tr class="active"><th>备注</th><td><input name="change_mage" type="text"></td></tr>
+    <tr class="active"><th>操作</th><td><input type="submit" value="保存" class="btn btn-success"> 
             <input type="reset" value="重填"  class="btn btn-success"></td></tr>
     </thread>
 </table>
 </div>
 </div>
+</div>
+  <div id="footer">Copyright © 2022 YIJIU All Rights Reserved.</div>
+</body>
 </form>
 </html>
