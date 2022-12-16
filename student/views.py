@@ -92,7 +92,8 @@ def delete(request):
 
 def deletesc(request):
    delete_num = request.GET.get('delete_num')
-   delete_student = models.scinfo.objects.filter(course_no = delete_num).first()
+   sc_no = request.GET.get('sc_no')
+   delete_student = models.scinfo.objects.filter(student_no=sc_no,course_no = delete_num).first()
    models.sc.objects.get(student_no = delete_student.student_no,course_no = delete_num).delete()
    messages.info(request, '删除成功！')
    return redirect("/scinfo/?sc_no="+delete_student.student_no)
