@@ -10,6 +10,36 @@
      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    <script>
+        function showStudent(str1,str2,str3)
+        {
+            var xmlhttp;    
+            if (str=="")
+            {
+                document.getElementById("txtHint").innerHTML="";
+                return;
+            }
+            if (window.XMLHttpRequest)
+            {
+                // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {
+                // IE6, IE5 浏览器执行代码
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET","?sno="+str1+"&?sname="+str2+"&?sclassno="+str3,true);
+            xmlhttp.send();
+        } 
+    </script>
     <style type="text/css">
       body{
 	      background-image: url(/static/2.jpg);
@@ -54,15 +84,28 @@
 </head>
 
 <body >
+<div id="txtHint">
 <h2>学生成绩信息表</h2>
 <div id="content">
 <div class="row">
 <div class="table-responsive padding-sm col-md-10 col-md-offset-1">
-  <table class="table table-bordered table-hover">
+  <table class="table table-bordered table-hover"> 
     <div class="btn-group btn-group-justified">
       <a href="http://127.0.0.1:8000/studentinfo" class="btn btn-info">学生学籍信息</a>
-      <a href="http://127.0.0.1:8000/insert" class="btn btn-primary">添加学生</a>
     </div>
+    <div class="btn-group btn-group-justified">
+      <div class="btn-group">
+        <a href="http://127.0.0.1:8000/gradeinfo" class="btn btn-success">全部学生成绩</a></div>
+      <div class="btn-group"><form action="">
+        <input type="text" class="form-control" name="sno" onchange="showStudent(this.values,,)" placeholder="输入学号查询,示例:20200001">
+      </form></div>
+      <div class="btn-group"><form action="">
+        <input type="text" class="form-control" name="sname" onchange="showStudent(,this.value,)" placeholder="输入姓名查询,示例:学生1">
+      </form></div>
+      <div class="btn-group"><form action="">
+        <input type="text" class="form-control" name="sclassno" onchange="showStudent(,,this.value)" placeholder="输入班号查询,示例:1001">
+      </form></div>      
+    </div> 
     <thead>
       <tr class="active">
         <th>学号</th>
@@ -88,5 +131,6 @@
 </div>
 </div>
 <div id="footer">Copyright © 2022 YIJIU All Rights Reserved.</div>
+</div>
 </body>
 </html>

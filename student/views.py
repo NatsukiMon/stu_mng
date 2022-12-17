@@ -39,14 +39,46 @@ def register(request):
    return render(request,"register.html")
 
 def studentinfo(request):
-   student_list = models.student.objects.all()
-   c = {"student_list": student_list, }
-   return render(request, "studentinfo.html", c)
+   sno = request.GET.get('sno')
+   sgender = request.GET.get('gender')
+   sname = request.GET.get('sname')
+   sclsno = request.GET.get('sclassno')
+   sdept = request.GET.get('sdeptno')
+   a_list = models.student.objects.all()
+   if sno != None:
+      b = models.student.objects.filter(student_no = sno).all()
+      a_list = a_list & b
+   if sgender != None:
+      c = models.student.objects.filter(gender = sgender).all()
+      a_list = a_list & c
+   if sname != None:
+      d = models.student.objects.filter(student_name = sname).all()
+      a_list = a_list & d
+   if sclsno != None:
+      e = models.student.objects.filter(class_no_id = sclsno).all()
+      a_list = a_list & e
+   if sdept != None:
+      f = models.student.objects.filter(dept_no_id = sdept).all()
+      a_list = a_list & f
+   a = {"student_list": a_list, }
+   return render(request, "studentinfo.html", a)
 
 def gradeinfo(request):
+   sno = request.GET.get('sno')
+   sname = request.GET.get('sname')
+   sclsno = request.GET.get('sclassno')
    grade_list = models.gradeinfo.objects.all()
-   b = {"grade_list": grade_list, }
-   return render(request, "gradeinfo.html",b)
+   if sno != None:
+      b = models.gradeinfo.objects.filter(student_no = sno).all()
+      grade_list = grade_list & b
+   if sname != None:
+      c = models.gradeinfo.objects.filter(student_name = sname).all()
+      grade_list = grade_list & c
+   if sclsno != None:
+      d = models.gradeinfo.objects.filter(class_no = sclsno).all()
+      grade_list = grade_list & d 
+   grade = {"grade_list": grade_list, }
+   return render(request, "gradeinfo.html",grade)
 
 def insert(request):
    if request.method == 'POST':
